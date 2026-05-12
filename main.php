@@ -17,6 +17,7 @@
         }
         echo "</ul>";
     }
+
     function bubble_sort($arrayGiven){
         //start with the unsorted array as the sorted array
         // so we try and solve it
@@ -51,11 +52,46 @@
         return $sortedArray;
     }
 
+    function array_insert(){
+        //dear php: this needs to be a freaking function bro
+        // i don't know what kinda hippie ahh grass smoking dude
+        // decided that arrays don't need an insert method. this is
+        // not c bro we're dynamically typed. just add my insert function
+        // (loook at herrr she's a beaut innit)
+        
+    }
     function insert_sort($givenArray){
         $lenOfArrayGiven = count($givenArray);
-        //insertion sort:
+        //insertion sort: insert at i for each value
+        $unsortedArray = $givenArray;
+        $sortedArray = array();
         for ($i = 0; $i<$lenOfArrayGiven-1; $i++){
-            //
+            //first, let's get the unsorted array and append an element
+            // to each part
+            $valueInSortedArray = $unsortedArray[i];
+            $updatedLenOfSortedArray = count($sortedArray);
+            for ($j = 0; $j<=$updatedLenOfSortedArray; $j++){
+                //here we do <= because we gotta make sure that
+                // we can handle the initial edge case indexing
+                // when we have
+                //  unsorted[1,3,19,2....]
+                //  sorted[]
+                if ($j == $updatedLenOfSortedArray){
+                    //here's that last index/zero index edge case
+                    // if we have
+                    // unsorted [27, 1,5,2,19]
+                    // sorted [3,4,8]
+                    // when we compare we're gonna see the insert is greater
+                    // up until the end, where then we insert the top value
+                    array_push($sortedArray, $valueInSortedArray);
+                    //push here is lowkirk gross but we CAN do it because
+                    // it's at the end of the array
+                    // also it's push like enqueue on a Queue
+                }
+                else {
+
+                }
+            }
         }
 
         return
